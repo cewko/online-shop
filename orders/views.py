@@ -1,5 +1,5 @@
 from cart.cart import Cart
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import OrderCreateForm
 from .models import OrderItem
 from .tasks import order_created
@@ -12,8 +12,6 @@ def order_create(request):
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             order = form.save()
-            # launch asyns task
-            order_created.delay(order.id)
             for item in cart:
                 OrderItem.objects.create(
                     order=order,
@@ -23,10 +21,12 @@ def order_create(request):
                 )
             # clear the cart
             cart.clear()
-
-            return render(
-                request, "orders/order/created.html", {"order": order}
-            )
+            # launch asyns task
+            order_created.delay(order.id)
+            # set the order in the session
+            request.session["order_id"] = order.id
+            # redirect for payment
+            return redirect("payment:process")
     else:
         form = OrderCreateForm()
 
