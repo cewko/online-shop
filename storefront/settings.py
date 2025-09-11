@@ -16,6 +16,10 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Redis settings
+REDIS_HOST = "localhost"
+REDIS_PORT = 6379
+REDIS_DB = 1
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
