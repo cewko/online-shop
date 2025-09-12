@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-12 14:25+0200\n"
-"PO-Revision-Date: 2025-09-12 12:45+0000\n"
+"POT-Creation-Date: 2025-09-12 14:57+0200\n"
+"PO-Revision-Date: 2025-09-12 13:01+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -26,6 +26,18 @@ msgstr "Количество"
 #: coupons/forms.py:6
 msgid "Coupon"
 msgstr "Купон"
+
+#: payment/urls.py:9
+msgid "process/"
+msgstr "oplata/"
+
+#: payment/urls.py:10
+msgid "completed/"
+msgstr "zaversheno/"
+
+#: payment/urls.py:11
+msgid "canceled/"
+msgstr "otmeneno/"
 
 #: shop/templates/shop/base.html:7 shop/templates/shop/base.html:12
 msgid "My shop"
@@ -70,10 +82,27 @@ msgstr "Добавить в корзину."
 msgid "People who bought this also bought"
 msgstr "Люди, купившие это, также купили"
 
-#: storefront/settings.py:134
+#: storefront/settings.py:136
 msgid "English"
 msgstr "Английский"
 
-#: storefront/settings.py:135
+#: storefront/settings.py:137
 msgid "Russian"
 msgstr "Русский"
+
+#: storefront/urls.py:29
+msgid "cart/"
+msgstr "korzina/"
+
+#: storefront/urls.py:30
+msgid "orders/"
+msgstr "zakazy/"
+
+#: storefront/urls.py:31
+msgid "payment/"
+msgstr "platezh/"
+
+#: storefront/urls.py:32
+#| msgid "Coupon"
+msgid "coupons/"
+msgstr "kupony/"
