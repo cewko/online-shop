@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "rosetta",
+    "parler",
 
     "shop.apps.ShopConfig",
     "cart.apps.CartConfig",
@@ -159,3 +160,15 @@ STATIC_ROOT = BASE_DIR / "static"
 CART_SESSION_ID = "cart"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# django-parler settings
+PARLET_LANGUAGES = {
+    None: (
+        {"code": "en"},
+        {"code": ru},
+    ),
+    "default": {
+        "fallback": "en",
+        "hide_untranslated": False,
+    }
+}
