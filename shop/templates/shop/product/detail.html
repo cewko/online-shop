@@ -1,6 +1,7 @@
 {% extends "shop/base.html" %}
 {% load static %}
 {% load i18n static %}
+{% load l10n %}
 
 {% block title %}
     {{ product.name }}
@@ -15,7 +16,7 @@
                 {{ product.category }}
             </a>
         </h2>
-        <p class="price">${{ product.price }}</p>
+        <p class="price">${{ product.price|localize }}</p>
         <form action="{% url 'cart:cart_add' product.id %}" method="post">
             {{ cart_product_form }}
             {% csrf_token %}
