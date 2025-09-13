@@ -162,10 +162,10 @@ CART_SESSION_ID = "cart"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # django-parler settings
-PARLET_LANGUAGES = {
+PARLER_LANGUAGES = {
     None: (
         {"code": "en"},
-        {"code": ru},
+        {"code": "ru"},
     ),
     "default": {
         "fallback": "en",
